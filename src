@@ -1,0 +1,51 @@
+//Armstrong sayı
+
+import java.util.Scanner;
+public class basamak_sayisi {
+    public static void main(String [] args){
+        Scanner sc=new Scanner(System.in);
+        int sayi, i, gecici, basamak=0, deger, toplam=1, sonuc=0;
+        System.out.print("Sayi giriniz: ");
+        sayi=sc.nextInt();
+        gecici=sayi;
+
+        while(gecici!=0){
+            gecici/=10;
+            basamak++;
+        }
+
+        gecici=sayi;
+        while(gecici!=0){
+                deger=gecici%10;
+                System.out.println(deger);
+            toplam=1;
+            for(i=1; i<=basamak; i++){
+
+                toplam*=deger;
+            }
+
+            sonuc+=toplam;
+            gecici/=10;
+
+    }
+
+        System.out.println("Basamak sayısı: "+basamak);
+        if(sonuc==sayi)
+            System.out.println("Armstrong sayıdır.");
+        else
+            System.out.println(sayi + "Sayısı Armstrong sayı değildir.");
+
+     //Sayının basamkları toplamı
+
+        int depo=sayi, bas=0, topla=0, deger1;
+        while(depo!=0){
+
+            bas++;
+            deger1=depo%10;
+            topla+=deger1;
+            depo/=10;
+        }
+        System.out.println("Basamak sayısı: " + topla);
+    }
+
+}
